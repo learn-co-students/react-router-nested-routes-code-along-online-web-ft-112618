@@ -1,16 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const MovieList = ({movies}) => {
-  const renderMovies = Object.keys(movies).map(movieID =>
-  <Link key={movieID} to={`/movies/${movieID}`}>{movies[movieID].title}</Link>
-);
+const MoviesList = ({ movies }) => {
+  const renderMovies = Object.keys(movies).map(movie =>
+    <Link key={movies[movie].id} to={`/movies/${movies[movie].id}`}>{movies[movie].title}</Link>
+  );
 
- return (
-   <div>
-    {renderMovies}
-  </div>
+  return (
+    <div>
+      {renderMovies}
+    </div>
   );
 };
 
-export default MovieList
+export default MoviesList;
